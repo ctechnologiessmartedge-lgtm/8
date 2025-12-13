@@ -1,13 +1,28 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { Helmet } from "react-helmet-async";
+import Layout from "@/components/layout/Layout";
+import HeroSection from "@/components/home/HeroSection";
+import ServicesOverview from "@/components/home/ServicesOverview";
+import WhyChooseUs from "@/components/home/WhyChooseUs";
+import CTABanner from "@/components/home/CTABanner";
 
 const Index = () => {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
-    </div>
+    <>
+      <Helmet>
+        <title>C Technologies Smart Edge | Security & Smart Solutions Vijayawada</title>
+        <meta
+          name="description"
+          content="C Technologies Smart Edge provides advanced CCTV, access control, home automation, and smart security solutions in Vijayawada. Live Smartly with our expert installations."
+        />
+        <meta name="keywords" content="CCTV Vijayawada, security systems, home automation, access control, smart home, surveillance cameras" />
+      </Helmet>
+      <Layout>
+        <HeroSection />
+        <ServicesOverview />
+        <WhyChooseUs />
+        <CTABanner />
+      </Layout>
+    </>
   );
 };
 
