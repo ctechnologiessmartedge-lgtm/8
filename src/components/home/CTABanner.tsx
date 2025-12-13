@@ -4,7 +4,7 @@ import { Phone, ArrowRight } from "lucide-react";
 
 const CTABanner = () => {
   return (
-    <section className="section-padding bg-hero relative overflow-hidden">
+    <section className="py-12 md:py-16 bg-hero relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-0 right-0 w-96 h-96 bg-accent rounded-full blur-3xl" />
@@ -37,11 +37,11 @@ const CTABanner = () => {
           </div>
 
           {/* Trust Indicators */}
-          <div className="mt-12 pt-8 border-t border-primary-foreground/10">
-            <p className="text-primary-foreground/60 text-sm mb-4">
+          <div className="mt-8 pt-6 border-t border-primary-foreground/10">
+            <p className="text-primary-foreground/60 text-sm mb-3">
               Serving Vijayawada & Surrounding Areas
             </p>
-            <div className="flex flex-wrap justify-center gap-8">
+            <div className="flex flex-wrap justify-center gap-6">
               {["Vijayawada", "Guntur", "Tenali", "Mangalagiri", "Amaravati"].map(
                 (city) => (
                   <span
