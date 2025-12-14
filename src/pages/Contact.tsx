@@ -18,8 +18,14 @@ const contactInfo = [
   {
     icon: Phone,
     title: "Phone",
-    content: "+91 98765 43210",
-    link: "tel:+919876543210",
+    content: "+91-9010727204",
+    link: "tel:+919010727204",
+  },
+  {
+    icon: Phone,
+    title: "Phone",
+    content: "+91-9010700204",
+    link: "tel:+919010700204",
   },
   {
     icon: Mail,
@@ -73,7 +79,7 @@ const Contact = () => {
     setIsSubmitting(false);
   };
 
-  const whatsappNumber = "919876543210";
+  const whatsappNumber = "919010700204";
   const whatsappMessage = encodeURIComponent(
     "Hi, I'm interested in your security solutions. Please share more details."
   );
@@ -154,7 +160,7 @@ const Contact = () => {
                         id="phone"
                         name="phone"
                         type="tel"
-                        placeholder="+91 98765 43210"
+                        placeholder="+91-9010727204"
                         value={formData.phone}
                         onChange={handleChange}
                         required

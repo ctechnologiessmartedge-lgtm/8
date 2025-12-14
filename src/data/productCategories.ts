@@ -164,7 +164,7 @@ export const productCategories: ProductCategory[] = [
   },
 ];
 
-export const whatsappNumber = "919876543210";
+export const whatsappNumber = "919010700204";
 
 export const getWhatsAppLink = (productModel: string, productName: string) => {
   const message = encodeURIComponent(
