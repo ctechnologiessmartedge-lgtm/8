@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, ArrowRight, Sun, Lamp, Lightbulb, Factory, Radio } from "lucide-react";
-import { productCategories, whatsappNumber } from "@/data/productCategories";
+import { productCategories, whatsappNumber, getWhatsAppLink } from "@/data/productCategories";
 
 const iconMap = {
   Sun,
@@ -47,36 +47,65 @@ const Products = () => {
           </div>
         </section>
 
-        {/* Categories Grid */}
+        {/* All Products by Category */}
         <section className="py-12 bg-background">
           <div className="container-main">
-            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-8">
-              Browse by Category
+            <h2 className="text-2xl md:text-3xl font-bold text-foreground mb-10">
+              Our Products
             </h2>
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-              {filledCategories.map((category, index) => {
+            <div className="space-y-12">
+              {filledCategories.map((category, categoryIndex) => {
                 const Icon = iconMap[category.iconName];
+                
                 return (
-                  <Link
-                    key={category.slug}
-                    to={`/products/${category.slug}`}
-                    className="group bg-card rounded-xl border border-border shadow-soft card-hover p-6 animate-fade-in"
-                    style={{ animationDelay: `${index * 0.05}s` }}
-                  >
-                    <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
-                      <Icon className="w-6 h-6 text-accent" />
+                  <div key={category.slug} className="space-y-6">
+                    {/* Category Header */}
+                    <div className="flex items-center gap-4 pb-4 border-b border-border">
+                      <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center">
+                        <Icon className="w-6 h-6 text-accent" />
+                      </div>
+                      <div>
+                        <h3 className="text-xl md:text-2xl font-bold text-foreground">
+                          {category.title}
+                        </h3>
+                        <p className="text-sm text-muted-foreground">
+                          {category.products.length} products
+                        </p>
+                      </div>
                     </div>
-                    <h3 className="font-semibold text-foreground mb-2 group-hover:text-accent transition-colors">
-                      {category.title}
-                    </h3>
-                    <p className="text-sm text-muted-foreground mb-4">
-                      {category.products.length} products
-                    </p>
-                    <span className="inline-flex items-center gap-1 text-sm text-accent font-medium">
-                      View Products
-                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </Link>
+
+                    {/* Products Grid */}
+                    <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6">
+                      {category.products.map((product, productIndex) => (
+                        <a
+                          key={product.model}
+                          href={getWhatsAppLink(product.model, product.name)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="group bg-card rounded-xl border border-border shadow-soft card-hover p-6 flex flex-col animate-fade-in cursor-pointer"
+                          style={{ animationDelay: `${productIndex * 0.05}s` }}
+                        >
+                          <div className="mb-3">
+                            <span className="text-sm font-semibold text-accent block mb-2">
+                              {product.model}
+                            </span>
+                            <h4 className="font-semibold text-foreground mb-2">
+                              {product.name}
+                            </h4>
+                            <p className="text-sm text-muted-foreground">
+                              {product.specs}
+                            </p>
+                          </div>
+                          <div className="mt-auto pt-4">
+                            <span className="inline-flex items-center gap-2 text-sm text-accent font-medium group-hover:gap-3 transition-all">
+                              Enquire Now
+                              <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                            </span>
+                          </div>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                 );
               })}
             </div>

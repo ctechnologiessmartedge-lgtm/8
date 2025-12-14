@@ -4,23 +4,37 @@ import { Shield, Camera, Lock, Wifi } from "lucide-react";
 
 const HeroSection = () => {
   return (
-    <section className="relative min-h-screen flex items-center bg-hero overflow-hidden">
-      {/* Background Pattern */}
-      <div className="absolute inset-0 opacity-10">
+    <section className="relative min-h-[70vh] md:min-h-screen flex items-center bg-hero overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="/hero-video.mp4" type="video/mp4" />
+      </video>
+
+      {/* Dark Overlay for better text readability */}
+      <div className="absolute inset-0 bg-primary/45 z-[1]" />
+
+      {/* Background Pattern Overlay */}
+      <div className="absolute inset-0 opacity-10 z-[1]">
         <div className="absolute top-20 left-10 w-72 h-72 bg-accent rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/50 rounded-full blur-3xl" />
       </div>
 
       {/* Grid Pattern Overlay */}
       <div 
-        className="absolute inset-0 opacity-5"
+        className="absolute inset-0 opacity-5 z-[1]"
         style={{
           backgroundImage: `linear-gradient(hsl(187 94% 43% / 0.3) 1px, transparent 1px), linear-gradient(90deg, hsl(187 94% 43% / 0.3) 1px, transparent 1px)`,
           backgroundSize: '50px 50px'
         }}
       />
 
-      <div className="container-main relative z-10 pt-20">
+      <div className="container-main relative z-[2] pt-16 md:pt-20 pb-8 md:pb-0">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
@@ -31,12 +45,12 @@ const HeroSection = () => {
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4 md:mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               Secure Your World with{" "}
               <span className="text-gradient">Smart Technology</span>
             </h1>
 
-            <p className="text-lg md:text-xl text-primary-foreground/70 mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <p className="text-base md:text-lg lg:text-xl text-primary-foreground/70 mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
               Advanced security, automation, and smart living solutions for
               homes, offices, and commercial spaces. Experience safety and
               convenience like never before.
@@ -52,7 +66,7 @@ const HeroSection = () => {
             </div>
 
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-primary-foreground/10 animate-fade-in" style={{ animationDelay: "0.4s" }}>
+            <div className="grid grid-cols-3 gap-4 md:gap-6 mt-8 md:mt-12 pt-8 md:pt-12 border-t border-primary-foreground/10 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               {[
                 { value: "500+", label: "Installations" },
                 { value: "10+", label: "Years Experience" },

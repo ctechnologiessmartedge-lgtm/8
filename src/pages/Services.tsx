@@ -181,7 +181,7 @@ const Services = () => {
                     </p>
 
                     {/* Features */}
-                    <div className="grid sm:grid-cols-2 gap-3 mb-6">
+                    <div className="grid grid-cols-2 gap-2 md:gap-3 mb-6">
                       {service.features.map((feature) => (
                         <div key={feature} className="flex items-center gap-2">
                           <CheckCircle2 className="w-4 h-4 text-accent shrink-0" />

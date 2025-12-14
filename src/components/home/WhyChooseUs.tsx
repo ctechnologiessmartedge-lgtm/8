@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
             </p>
 
             {/* Benefits List */}
-            <div className="grid sm:grid-cols-2 gap-4">
+            <div className="grid grid-cols-2 gap-3 md:gap-4">
               {benefits.map((benefit) => (
                 <div key={benefit} className="flex items-center gap-3">
                   <CheckCircle2 className="w-5 h-5 text-accent shrink-0" />
@@ -63,7 +63,7 @@ const WhyChooseUs = () => {
           </div>
 
           {/* Right - Feature Cards */}
-          <div className="grid sm:grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-4 md:gap-6">
             {features.map((feature, index) => (
               <div
                 key={feature.title}

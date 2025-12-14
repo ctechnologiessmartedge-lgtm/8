@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Menu, X, Shield, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { productCategories } from "@/data/productCategories";
 
 const navLinks = [
@@ -41,19 +41,15 @@ const Header = () => {
       }`}
     >
       <div className="container-main">
-        <nav className="flex items-center justify-between h-20">
+        <nav className="flex items-center justify-between h-16">
           {/* Logo */}
-          <Link to="/" className="flex items-center gap-3 group">
-            <div className="w-10 h-10 rounded-lg bg-accent flex items-center justify-center transition-transform group-hover:scale-110">
-              <Shield className="w-6 h-6 text-accent-foreground" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-bold text-lg text-primary-foreground leading-tight">
-                C Technologies
-              </span>
-              <span className="text-xs text-primary-foreground/70 font-medium">
-                Smart Edge
-              </span>
+          <Link to="/" className="flex items-center group">
+            <div className="h-12 w-auto rounded-lg overflow-hidden transition-transform group-hover:scale-110">
+              <img 
+                src="/logo.png" 
+                alt="C Technologies Smart Edge Logo" 
+                className="h-full w-auto object-contain"
+              />
             </div>
           </Link>
 
@@ -154,90 +150,94 @@ const Header = () => {
         {/* Mobile Menu */}
         <div
           className={`md:hidden overflow-hidden transition-all duration-300 ${
-            isMobileMenuOpen ? "max-h-[80vh] pb-6" : "max-h-0"
+            isMobileMenuOpen ? "max-h-[80vh] pb-4" : "max-h-0"
           }`}
         >
-          <div className="flex flex-col gap-2 pt-4 border-t border-primary-foreground/10">
-            <Link
-              to="/"
-              className={`text-base font-medium py-2 transition-colors ${
-                location.pathname === "/"
-                  ? "text-accent"
-                  : "text-primary-foreground hover:text-accent"
-              }`}
-            >
-              Home
-            </Link>
-            <Link
-              to="/about"
-              className={`text-base font-medium py-2 transition-colors ${
-                location.pathname === "/about"
-                  ? "text-accent"
-                  : "text-primary-foreground hover:text-accent"
-              }`}
-            >
-              About
-            </Link>
-            
-            {/* Mobile Products Accordion */}
-            <div>
-              <button
-                onClick={() => setIsProductsOpen(!isProductsOpen)}
-                className={`w-full flex items-center justify-between text-base font-medium py-2 transition-colors ${
-                  location.pathname.startsWith("/products")
-                    ? "text-accent"
-                    : "text-primary-foreground hover:text-accent"
+          <div className="bg-white border-t border-gray-200 shadow-lg">
+            <div className="flex flex-col py-4">
+              <Link
+                to="/"
+                className={`px-6 py-3 text-base font-medium transition-colors border-l-4 ${
+                  location.pathname === "/"
+                    ? "text-accent border-accent bg-accent/5"
+                    : "text-black border-transparent hover:text-accent hover:bg-gray-50"
                 }`}
               >
-                Products
-                <ChevronDown className={`w-4 h-4 transition-transform ${isProductsOpen ? "rotate-180" : ""}`} />
-              </button>
-              <div className={`overflow-hidden transition-all duration-300 ${isProductsOpen ? "max-h-96" : "max-h-0"}`}>
-                <div className="pl-4 py-2 space-y-2 max-h-60 overflow-y-auto">
-                  <Link
-                    to="/products"
-                    className="block text-sm font-semibold text-primary-foreground/80 hover:text-accent py-1"
-                  >
-                    All Products
-                  </Link>
-                  {filledCategories.map((category) => (
+                Home
+              </Link>
+              <Link
+                to="/about"
+                className={`px-6 py-3 text-base font-medium transition-colors border-l-4 ${
+                  location.pathname === "/about"
+                    ? "text-accent border-accent bg-accent/5"
+                    : "text-black border-transparent hover:text-accent hover:bg-gray-50"
+                }`}
+              >
+                About
+              </Link>
+              
+              {/* Mobile Products Accordion */}
+              <div>
+                <button
+                  onClick={() => setIsProductsOpen(!isProductsOpen)}
+                  className={`w-full px-6 py-3 flex items-center justify-between text-base font-medium transition-colors text-left border-l-4 ${
+                    location.pathname.startsWith("/products")
+                      ? "text-accent border-accent bg-accent/5"
+                      : "text-black border-transparent hover:text-accent hover:bg-gray-50"
+                  }`}
+                >
+                  <span>Products</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${isProductsOpen ? "rotate-180" : ""}`} />
+                </button>
+                <div className={`overflow-hidden transition-all duration-300 ${isProductsOpen ? "max-h-96" : "max-h-0"}`}>
+                  <div className="bg-gray-50 py-2 space-y-1 max-h-60 overflow-y-auto">
                     <Link
-                      key={category.slug}
-                      to={`/products/${category.slug}`}
-                      className="block text-sm text-primary-foreground/60 hover:text-accent py-1"
+                      to="/products"
+                      className="block px-10 py-2 text-sm font-semibold text-gray-800 hover:text-accent hover:bg-white transition-colors"
                     >
-                      {category.title}
+                      All Products
                     </Link>
-                  ))}
+                    {filledCategories.map((category) => (
+                      <Link
+                        key={category.slug}
+                        to={`/products/${category.slug}`}
+                        className="block px-10 py-2 text-sm text-gray-700 hover:text-accent hover:bg-white transition-colors"
+                      >
+                        {category.title}
+                      </Link>
+                    ))}
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <Link
-              to="/services"
-              className={`text-base font-medium py-2 transition-colors ${
-                location.pathname === "/services"
-                  ? "text-accent"
-                  : "text-primary-foreground hover:text-accent"
-              }`}
-            >
-              Services
-            </Link>
-            <Link
-              to="/contact"
-              className={`text-base font-medium py-2 transition-colors ${
-                location.pathname === "/contact"
-                  ? "text-accent"
-                  : "text-primary-foreground hover:text-accent"
-              }`}
-            >
-              Contact
-            </Link>
-            <Link to="/contact" className="mt-2">
-              <Button variant="accent" className="w-full">
-                Get a Quote
-              </Button>
-            </Link>
+              <Link
+                to="/services"
+                className={`px-6 py-3 text-base font-medium transition-colors border-l-4 ${
+                  location.pathname === "/services"
+                    ? "text-accent border-accent bg-accent/5"
+                    : "text-black border-transparent hover:text-accent hover:bg-gray-50"
+                }`}
+              >
+                Services
+              </Link>
+              <Link
+                to="/contact"
+                className={`px-6 py-3 text-base font-medium transition-colors border-l-4 ${
+                  location.pathname === "/contact"
+                    ? "text-accent border-accent bg-accent/5"
+                    : "text-black border-transparent hover:text-accent hover:bg-gray-50"
+                }`}
+              >
+                Contact
+              </Link>
+              <div className="px-6 pt-4 mt-2 border-t border-gray-200">
+                <Link to="/contact">
+                  <Button variant="accent" className="w-full">
+                    Get a Quote
+                  </Button>
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </div>

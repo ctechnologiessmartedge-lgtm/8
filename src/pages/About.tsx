@@ -189,22 +189,45 @@ const About = () => {
         </section>
 
         {/* Service Areas */}
-        <section className="section-padding bg-hero">
-          <div className="container-main">
-            <div className="text-center max-w-2xl mx-auto mb-12">
-              <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-6">
-                <MapPin className="w-7 h-7 text-accent" />
+        <section className="py-10 md:py-12 bg-hero relative overflow-hidden">
+          {/* Background Design */}
+          <div className="absolute inset-0 bg-gradient-to-br from-primary via-primary/98 to-primary z-0" />
+          
+          {/* Glow Effects */}
+          <div className="absolute inset-0 z-[1]">
+            <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-accent/20 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-accent/15 rounded-full blur-3xl" />
+          </div>
+          
+          {/* Grid Pattern */}
+          <div 
+            className="absolute inset-0 opacity-[0.05] z-[1]"
+            style={{
+              backgroundImage: `linear-gradient(hsl(187 94% 43% / 0.2) 1px, transparent 1px), linear-gradient(90deg, hsl(187 94% 43% / 0.2) 1px, transparent 1px)`,
+              backgroundSize: '40px 40px'
+            }}
+          />
+          
+          {/* Border Accents */}
+          <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/60 to-transparent z-[1]" />
+          <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/40 to-transparent z-[1]" />
+          
+          <div className="container-main relative z-[2]">
+            <div className="text-center max-w-2xl mx-auto mb-6">
+              <div className="w-12 h-12 rounded-xl bg-accent/20 flex items-center justify-center mx-auto mb-4 shadow-glow">
+                <MapPin className="w-6 h-6 text-accent" />
               </div>
-              <h2 className="text-3xl md:text-4xl font-bold text-primary-foreground mb-4">
+              <h2 className="text-2xl md:text-3xl font-bold text-primary-foreground mb-3">
                 Our Service Areas
               </h2>
-              <p className="text-primary-foreground/70">
+              <p className="text-base md:text-lg text-primary-foreground/70">
                 Proudly serving Vijayawada and the surrounding regions with
                 professional security solutions
               </p>
             </div>
 
-            <div className="flex flex-wrap justify-center gap-4">
+            {/* Service Areas Grid */}
+            <div className="flex flex-wrap justify-center gap-3 mb-6">
               {[
                 "Vijayawada",
                 "Guntur",
@@ -214,21 +237,23 @@ const About = () => {
                 "Tadepalli",
                 "Gudivada",
                 "Machilipatnam",
-              ].map((city) => (
+              ].map((city, index) => (
                 <span
                   key={city}
-                  className="px-6 py-3 bg-secondary/30 rounded-full text-primary-foreground font-medium border border-primary-foreground/10"
+                  className="px-6 py-3 bg-secondary/40 backdrop-blur-sm rounded-full text-primary-foreground font-medium border border-primary-foreground/20 hover:border-accent/50 hover:bg-accent/10 hover:shadow-glow transition-all duration-300 cursor-default"
+                  style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   {city}
                 </span>
               ))}
             </div>
 
-            <div className="text-center mt-12">
+            {/* CTA Button */}
+            <div className="text-center">
               <Link to="/contact">
-                <Button variant="hero" className="group">
+                <Button variant="hero" size="lg" className="group">
                   Get in Touch
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>
