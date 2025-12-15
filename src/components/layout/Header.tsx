@@ -44,7 +44,7 @@ const Header = () => {
         <nav className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center group">
-            <div className="h-12 w-auto rounded-lg overflow-hidden transition-transform group-hover:scale-110">
+            <div className="h-[57.6px] w-auto rounded-lg overflow-hidden transition-transform group-hover:scale-110">
               <img 
                 src="/logo.png" 
                 alt="C Technologies Smart Edge Logo" 

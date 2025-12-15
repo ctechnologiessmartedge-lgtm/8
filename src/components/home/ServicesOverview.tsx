@@ -68,7 +68,7 @@ const ServicesOverview = () => {
             Complete Security & Smart Technology Solutions
           </h2>
           <p className="text-lg text-muted-foreground">
-            From surveillance to automation, we provide end-to-end solutions
+            <span className="font-bold text-blue-500">C Technologies Smart Edge</span> - From surveillance to automation, we provide end-to-end solutions
             tailored for homes, offices, and commercial establishments.
           </p>
         </div>

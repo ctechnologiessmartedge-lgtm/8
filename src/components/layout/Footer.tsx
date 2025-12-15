@@ -29,7 +29,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="lg:col-span-1">
             <Link to="/" className="flex items-center mb-3 md:mb-6">
-              <div className="h-10 md:h-14 w-auto rounded-lg overflow-hidden">
+              <div className="h-12 md:h-[67.2px] w-auto rounded-lg overflow-hidden">
                 <img 
                   src="/logo.png" 
                   alt="C Technologies Smart Edge Logo" 
@@ -38,7 +38,7 @@ const Footer = () => {
               </div>
             </Link>
             <p className="text-primary-foreground/70 text-xs md:text-sm leading-relaxed mb-4">
-              Providing advanced security, automation, and smart living
+              <span className="font-bold text-blue-500">C Technologies Smart Edge</span> - Providing advanced security, automation, and smart living
               solutions in Vijayawada and nearby regions.
             </p>
             <div className="flex items-center gap-3">

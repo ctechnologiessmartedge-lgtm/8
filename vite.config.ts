@@ -9,10 +9,23 @@ export default defineConfig(({ mode }) => ({
     host: "127.0.0.1",
     port: 5173,
   },
+  preview: {
+    port: 4173,
+    strictPort: true,
+  },
   plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+        },
+      },
     },
   },
 }));

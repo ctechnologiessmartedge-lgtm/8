@@ -134,29 +134,33 @@ const Services = () => {
       </Helmet>
       <Layout>
         {/* Hero Section */}
-        <section className="pt-32 pb-16 bg-hero relative overflow-hidden">
+        <section className="pt-20 md:pt-32 pb-8 md:pb-16 bg-hero relative overflow-hidden">
           <div 
-            className="absolute inset-0 z-0"
+            className="absolute inset-0 z-0 bg-contain md:bg-cover"
             style={{
               backgroundImage: 'url(/hero-bg.png)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              backgroundPosition: 'top center',
               backgroundRepeat: 'no-repeat',
-              opacity: 0.5
+              opacity: 0.6
             }}
           />
-          <div className="absolute inset-0 bg-primary/30 z-[1]" />
+          <div className="absolute inset-0 bg-primary/20 z-[1]" />
           <div className="absolute inset-0 opacity-10 z-[1]">
             <div className="absolute top-20 right-20 w-72 h-72 bg-accent rounded-full blur-3xl" />
           </div>
           <div className="container-main relative z-10">
-            <div className="max-w-3xl">
+            <div className="max-w-3xl mx-auto text-center">
               <span className="text-accent font-semibold text-sm tracking-wider uppercase mb-4 block animate-fade-in">
                 Our Services
               </span>
-              <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+              <h1 className="text-4xl md:text-5xl font-bold text-primary-foreground mb-4 animate-fade-in" style={{ animationDelay: "0.1s" }}>
                 Complete Security & Smart Technology Solutions
               </h1>
+              <div className="mb-6 animate-fade-in" style={{ animationDelay: "0.15s" }}>
+                <span className="text-2xl md:text-3xl font-bold text-blue-500">
+                  C Technologies Smart Edge
+                </span>
+              </div>
               <p className="text-xl text-primary-foreground/70 animate-fade-in" style={{ animationDelay: "0.2s" }}>
                 From surveillance to automation, we offer end-to-end solutions
                 designed to protect and enhance your home, office, or commercial

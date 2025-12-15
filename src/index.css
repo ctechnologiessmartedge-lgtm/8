@@ -112,6 +112,16 @@
   h1, h2, h3, h4, h5, h6 {
     @apply font-bold tracking-tight;
   }
+
+  img {
+    @apply max-w-full;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+
+  img[loading="lazy"] {
+    content-visibility: auto;
+  }
 }
 
 @layer utilities {

@@ -45,9 +45,9 @@ const HeroSection = () => {
               </span>
             </div>
 
-            <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold text-primary-foreground leading-tight mb-4 md:mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
+            <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-4 md:mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               Secure Your World with{" "}
-              <span className="text-gradient">Smart Technology</span>
+              <span className="text-blue-500">C Technologies Smart Edge</span>
             </h1>
 
             <p className="text-base md:text-lg lg:text-xl text-primary-foreground/70 mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>

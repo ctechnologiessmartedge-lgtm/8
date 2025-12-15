@@ -21,18 +21,17 @@ const ProductCategory = () => {
   if (!category) {
     return (
       <Layout>
-        <section className="pt-32 pb-16 bg-hero relative overflow-hidden">
+        <section className="pt-20 md:pt-32 pb-8 md:pb-16 bg-hero relative overflow-hidden">
           <div 
-            className="absolute inset-0 z-0"
+            className="absolute inset-0 z-0 bg-contain md:bg-cover"
             style={{
               backgroundImage: 'url(/hero-bg.png)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              backgroundPosition: 'top center',
               backgroundRepeat: 'no-repeat',
-              opacity: 0.5
+              opacity: 0.6
             }}
           />
-          <div className="absolute inset-0 bg-primary/30 z-[1]" />
+          <div className="absolute inset-0 bg-primary/20 z-[1]" />
           <div className="container-main text-center relative z-[2]">
             <h1 className="text-4xl font-bold text-primary-foreground mb-4">Category Not Found</h1>
             <Link to="/products">
@@ -60,40 +59,46 @@ const ProductCategory = () => {
       </Helmet>
       <Layout>
         {/* Hero Section */}
-        <section className="pt-32 pb-12 bg-hero relative overflow-hidden">
+        <section className="pt-20 md:pt-32 pb-6 md:pb-12 bg-hero relative overflow-hidden">
           <div 
-            className="absolute inset-0 z-0"
+            className="absolute inset-0 z-0 bg-contain md:bg-cover"
             style={{
               backgroundImage: 'url(/hero-bg.png)',
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
+              backgroundPosition: 'top center',
               backgroundRepeat: 'no-repeat',
-              opacity: 0.5
+              opacity: 0.6
             }}
           />
-          <div className="absolute inset-0 bg-primary/30 z-[1]" />
+          <div className="absolute inset-0 bg-primary/20 z-[1]" />
           <div className="absolute inset-0 opacity-10 z-[1]">
             <div className="absolute top-20 right-20 w-72 h-72 bg-accent rounded-full blur-3xl" />
           </div>
           <div className="container-main relative z-10">
-            <Link 
-              to="/products" 
-              className="inline-flex items-center gap-2 text-accent hover:text-accent/80 mb-6 transition-colors"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Back to All Products
-            </Link>
-            <div className="flex items-center gap-4 mb-4">
-              <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center">
-                <Icon className="w-7 h-7 text-accent" />
+            <div className="max-w-3xl mx-auto text-center">
+              <Link 
+                to="/products" 
+                className="inline-flex items-center gap-2 text-accent hover:text-accent/80 mb-6 transition-colors"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Back to All Products
+              </Link>
+              <div className="flex items-center justify-center gap-4 mb-4">
+                <div className="w-14 h-14 rounded-xl bg-accent/20 flex items-center justify-center">
+                  <Icon className="w-7 h-7 text-accent" />
+                </div>
+                <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground">
+                  {category.title}
+                </h1>
               </div>
-              <h1 className="text-3xl md:text-4xl font-bold text-primary-foreground">
-                {category.title}
-              </h1>
+              <div className="mb-4">
+                <span className="text-xl md:text-2xl font-bold text-blue-500">
+                  C Technologies Smart Edge
+                </span>
+              </div>
+              <p className="text-lg text-primary-foreground/70">
+                {category.products.length} products available in this category
+              </p>
             </div>
-            <p className="text-lg text-primary-foreground/70 max-w-2xl">
-              {category.products.length} products available in this category
-            </p>
           </div>
         </section>
 
@@ -108,11 +113,14 @@ const ProductCategory = () => {
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   {product.image && (
-                    <div className="w-full h-40 mb-4 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
+                    <div className="w-full h-32 md:h-40 mb-4 rounded-lg overflow-hidden bg-muted flex items-center justify-center">
                       <img
                         src={product.image}
                         alt={product.name}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                        style={{ imageRendering: 'auto', willChange: 'transform' }}
                       />
                     </div>
                   )}

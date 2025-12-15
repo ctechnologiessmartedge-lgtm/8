@@ -42,6 +42,11 @@ const CTABanner = () => {
           <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-primary-foreground mb-3">
             Ready to Secure Your Space?
           </h2>
+          <div className="mb-3">
+            <span className="text-xl md:text-2xl font-bold text-blue-500">
+              C Technologies Smart Edge
+            </span>
+          </div>
           <p className="text-base md:text-lg text-primary-foreground/70 mb-6">
             Get a free consultation and customized quote for your security and automation needs.
           </p>

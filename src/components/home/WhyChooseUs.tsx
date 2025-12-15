@@ -46,7 +46,7 @@ const WhyChooseUs = () => {
               Your Trusted Partner for Smart Security Solutions
             </h2>
             <p className="text-lg text-muted-foreground mb-8">
-              At C Technologies Smart Edge, we combine cutting-edge technology
+              At <span className="font-bold text-blue-500">C Technologies Smart Edge</span>, we combine cutting-edge technology
               with personalized service to deliver security solutions that truly
               protect what matters most to you.
             </p>
