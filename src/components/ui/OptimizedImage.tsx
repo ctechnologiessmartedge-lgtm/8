@@ -76,6 +76,9 @@ const OptimizedImage = ({ src, alt, className = "", priority = false, ...props }
           className={`transition-opacity duration-300 ${
             isLoaded ? "opacity-100" : "opacity-0"
           } ${className}`}
+          style={{
+            ...props.style
+          }}
           {...props}
         />
       )}
