@@ -24,7 +24,7 @@ const ProductCategories = () => {
             Our Products
           </span>
           <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Smart Sensor Lighting Solutions
+            Complete Smart Living Solutions
           </h2>
           <p className="text-lg text-muted-foreground">
             Explore our comprehensive range of energy-efficient lighting products with motion sensors and smart controls.

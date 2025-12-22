@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import OptimizedImage from "@/components/ui/OptimizedImage";
-import { MessageCircle, ArrowRight, ArrowLeft, Sun, Lamp, Lightbulb, Factory, Radio } from "lucide-react";
+import { MessageCircle, ArrowRight, ArrowLeft, Sun, Lamp, Lightbulb, Factory, Radio, Camera, Fingerprint, Video, Home, DoorOpen, Bell, Monitor, Code, Speaker, Network, Wrench } from "lucide-react";
 import { productCategories, getWhatsAppLink, whatsappNumber } from "@/data/productCategories";
 
 const iconMap = {
@@ -12,6 +12,17 @@ const iconMap = {
   Lightbulb,
   Factory,
   Radio,
+  Camera,
+  Fingerprint,
+  Video,
+  Home,
+  DoorOpen,
+  Bell,
+  Monitor,
+  Code,
+  Speaker,
+  Network,
+  Wrench,
 };
 
 const ProductCategory = () => {
@@ -47,7 +58,7 @@ const ProductCategory = () => {
     );
   }
 
-  const Icon = iconMap[category.iconName];
+  const Icon = iconMap[category.iconName] || iconMap.Sun; // Fallback to Sun icon if not found
 
   return (
     <>
