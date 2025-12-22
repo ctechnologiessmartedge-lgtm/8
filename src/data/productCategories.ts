@@ -63,16 +63,6 @@ const getProductImage = (name: string, specs: string): string => {
     return "/products/Firefly_Gemini Flash_High Bay – with Sensor generate another iimages not same 729350.png";
   }
   
-  // Inzaus Motion Sensors
-  if (name === "Inzaus Motion Sensor Mini") {
-    return "/products/Firefly_Gemini Flash_Inzaus Motion Sensor Mini 282517.png";
-  }
-  if (name === "Inzaus Motion Sensor Tiny") {
-    return "/products/Firefly_Gemini Flash_Inzaus Motion Sensor tiny 282517.png";
-  }
-  if (name === "Inzaus Occupancy Presence Sensor") {
-    return "/products/Firefly_Gemini Flash_Inzaus Occupancy Presence Sensor 282517.png";
-  }
   if (name === "Sensor Switch") {
     return "/products/Firefly_Gemini Flash_Sensor Switch 282517.png";
   }
@@ -81,9 +71,6 @@ const getProductImage = (name: string, specs: string): string => {
   }
   if (name === "LDR Sensor") {
     return "/products/Firefly_Gemini Flash_LDR Sensor 661646.png";
-  }
-  if (name === "Inzaus Smoke Sensor") {
-    return "/products/Firefly_Gemini Flash_Inzaus Smoke Sensor 661646.png";
   }
   
   // Tube Light (Plastic)
@@ -237,11 +224,11 @@ export const productCategories: ProductCategory[] = [
     slug: "cctv-surveillance-systems",
     iconName: "Camera",
     products: [
-      { model: "CCTV-001", name: "CCTV Installation Service", specs: "Professional installation & maintenance", image: "/placeholder.svg" },
-      { model: "CCTV-002", name: "HD & 4K IP Cameras", specs: "High-definition surveillance cameras", image: "/placeholder.svg" },
-      { model: "CCTV-003", name: "Night Vision & IR Cameras", specs: "24/7 monitoring capabilities", image: "/placeholder.svg" },
-      { model: "CCTV-004", name: "Cloud & Local Storage", specs: "Secure video storage solutions", image: "/placeholder.svg" },
-      { model: "CCTV-005", name: "Mobile App Monitoring", specs: "Remote access & monitoring", image: "/placeholder.svg" },
+      { model: "CCTV-001", name: "CCTV Installation Service", specs: "Professional installation & maintenance", image: "/products/CCTV Installation Service.webp" },
+      { model: "CCTV-002", name: "HD & 4K IP Cameras", specs: "High-definition surveillance cameras", image: "/products/HD & 4K IP Cameras.webp" },
+      { model: "CCTV-003", name: "Night Vision & IR Cameras", specs: "24/7 monitoring capabilities", image: "/products/Night Vision & IR Cameras.webp" },
+      { model: "CCTV-004", name: "Cloud & Local Storage", specs: "Secure video storage solutions", image: "/products/Cloud & Local Storage.jpg" },
+      { model: "CCTV-005", name: "Mobile App Monitoring", specs: "Remote access & monitoring", image: "/products/Mobile App Monitoring.avif" },
     ],
   },
   {
@@ -249,11 +236,11 @@ export const productCategories: ProductCategory[] = [
     slug: "biometric-access-control",
     iconName: "Fingerprint",
     products: [
-      { model: "BIO-001", name: "Fingerprint Recognition System", specs: "Advanced biometric access control", image: "/placeholder.svg" },
-      { model: "BIO-002", name: "Face Recognition System", specs: "AI-powered face recognition", image: "/placeholder.svg" },
-      { model: "BIO-003", name: "RFID Card Access", specs: "Card-based access control", image: "/placeholder.svg" },
-      { model: "BIO-004", name: "Time & Attendance System", specs: "Employee attendance tracking", image: "/placeholder.svg" },
-      { model: "BIO-005", name: "Visitor Management System", specs: "Complete visitor tracking", image: "/placeholder.svg" },
+      { model: "BIO-001", name: "Fingerprint Recognition System", specs: "Advanced biometric access control", image: "/products/Fingerprint Recognition System.avif" },
+      { model: "BIO-002", name: "Face Recognition System", specs: "AI-powered face recognition", image: "/products/Face Recognition System.webp" },
+      { model: "BIO-003", name: "RFID Card Access", specs: "Card-based access control", image: "/products/RFID Card Access.webp" },
+      { model: "BIO-004", name: "Time & Attendance System", specs: "Employee attendance tracking", image: "/products/Time & Attendance System.webp" },
+      { model: "BIO-005", name: "Visitor Management System", specs: "Complete visitor tracking", image: "/products/Visitor Management System.avif" },
     ],
   },
   {
@@ -261,11 +248,11 @@ export const productCategories: ProductCategory[] = [
     slug: "video-door-phones-intercom",
     iconName: "Video",
     products: [
-      { model: "VDP-001", name: "HD Video Door Phone", specs: "High-definition video display", image: "/placeholder.svg" },
-      { model: "VDP-002", name: "Two-Way Audio Intercom", specs: "Clear audio communication", image: "/placeholder.svg" },
-      { model: "VDP-003", name: "Remote Unlock System", specs: "Mobile app controlled access", image: "/placeholder.svg" },
-      { model: "VDP-004", name: "Multi-Unit Intercom", specs: "Apartment complex solutions", image: "/placeholder.svg" },
-      { model: "VDP-005", name: "Mobile Integration", specs: "Smartphone app integration", image: "/placeholder.svg" },
+      { model: "VDP-001", name: "HD Video Door Phone", specs: "High-definition video display", image: "/products/HD Video Door Phone.jpg" },
+      { model: "VDP-002", name: "Two-Way Audio Intercom", specs: "Clear audio communication", image: "/products/Two-Way Audio Intercom.jpg" },
+      { model: "VDP-003", name: "Remote Unlock System", specs: "Mobile app controlled access", image: "/products/Remote Unlock System.webp" },
+      { model: "VDP-004", name: "Multi-Unit Intercom", specs: "Apartment complex solutions", image: "/products/Multi-Unit Intercom.jpg" },
+      { model: "VDP-005", name: "Mobile Integration", specs: "Smartphone app integration", image: "/products/Mobile Integration.jpg" },
     ],
   },
   {
@@ -273,11 +260,11 @@ export const productCategories: ProductCategory[] = [
     slug: "smart-home-office-automation",
     iconName: "Home",
     products: [
-      { model: "AUTO-001", name: "Smart Lighting Control", specs: "Automated lighting systems", image: "/placeholder.svg" },
-      { model: "AUTO-002", name: "AC & Fan Automation", specs: "Climate control automation", image: "/placeholder.svg" },
-      { model: "AUTO-003", name: "Motorized Curtains", specs: "Automated window treatments", image: "/placeholder.svg" },
-      { model: "AUTO-004", name: "Voice Control (Alexa/Google)", specs: "Voice-activated automation", image: "/placeholder.svg" },
-      { model: "AUTO-005", name: "Scene & Schedule Settings", specs: "Custom automation scenes", image: "/placeholder.svg" },
+      { model: "AUTO-001", name: "Smart Lighting Control", specs: "Automated lighting systems", image: "/products/Smart Lighting Control.webp" },
+      { model: "AUTO-002", name: "AC & Fan Automation", specs: "Climate control automation", image: "/products/AC & Fan Automation.webp" },
+      { model: "AUTO-003", name: "Motorized Curtains", specs: "Automated window treatments", image: "/products/Motorized Curtains.jpg" },
+      { model: "AUTO-004", name: "Voice Control (Alexa/Google)", specs: "Voice-activated automation", image: "/products/Voice Control (Alexa,Google).avif" },
+      { model: "AUTO-005", name: "Scene & Schedule Settings", specs: "Custom automation scenes", image: "/products/Scene & Schedule Settings.avif" },
     ],
   },
   {
@@ -285,7 +272,7 @@ export const productCategories: ProductCategory[] = [
     slug: "automatic-sliding-swing-gates",
     iconName: "DoorOpen",
     products: [
-      { model: "GATE-001", name: "Sliding Gate System", specs: "Motorized sliding gates", image: "/placeholder.svg" },
+      { model: "GATE-001", name: "Sliding Gate System", specs: "Motorized sliding gates", image: "/products/Sliding Gate System.webp" },
       { model: "GATE-002", name: "Swing Gate System", specs: "Automated swing gates", image: "/placeholder.svg" },
       { model: "GATE-003", name: "Remote Control Operation", specs: "Wireless remote control", image: "/placeholder.svg" },
       { model: "GATE-004", name: "Safety Sensors", specs: "Obstacle detection sensors", image: "/placeholder.svg" },
@@ -321,11 +308,11 @@ export const productCategories: ProductCategory[] = [
     slug: "software-installation-troubleshooting",
     iconName: "Code",
     products: [
-      { model: "SW-001", name: "OS Installation & Setup", specs: "Windows, Linux, macOS", image: "/placeholder.svg" },
-      { model: "SW-002", name: "Application Installation", specs: "Business & productivity software", image: "/placeholder.svg" },
-      { model: "SW-003", name: "Software Troubleshooting", specs: "Fix software issues", image: "/placeholder.svg" },
-      { model: "SW-004", name: "System Optimization", specs: "Performance enhancement", image: "/placeholder.svg" },
-      { model: "SW-005", name: "Data Recovery Services", specs: "Recover lost data", image: "/placeholder.svg" },
+      { model: "SW-001", name: "OS Installation & Setup", specs: "Windows, Linux, macOS", image: "/products/OS Installation & Setup.webp" },
+      { model: "SW-002", name: "Application Installation", specs: "Business & productivity software", image: "/products/Application Installation.webp" },
+      { model: "SW-003", name: "Software Troubleshooting", specs: "Fix software issues", image: "/products/Software Troubleshooting.jpg" },
+      { model: "SW-004", name: "System Optimization", specs: "Performance enhancement", image: "/products/System Optimization.avif" },
+      { model: "SW-005", name: "Data Recovery Services", specs: "Recover lost data", image: "/products/Data Recovery Services.webp" },
     ],
   },
   {
@@ -333,11 +320,11 @@ export const productCategories: ProductCategory[] = [
     slug: "projectors-professional-sound",
     iconName: "Speaker",
     products: [
-      { model: "AV-001", name: "HD/4K Projectors", specs: "High-resolution projectors", image: "/placeholder.svg" },
-      { model: "AV-002", name: "Conference Room Solutions", specs: "Complete AV setup", image: "/placeholder.svg" },
-      { model: "AV-003", name: "PA & Sound Systems", specs: "Professional audio systems", image: "/placeholder.svg" },
-      { model: "AV-004", name: "Interactive Displays", specs: "Touch-enabled displays", image: "/placeholder.svg" },
-      { model: "AV-005", name: "Video Conferencing Setup", specs: "Remote meeting solutions", image: "/placeholder.svg" },
+      { model: "AV-001", name: "HD/4K Projectors", specs: "High-resolution projectors", image: "/products/HD,4K Projectors.jpg" },
+      { model: "AV-002", name: "Conference Room Solutions", specs: "Complete AV setup", image: "/products/Conference Room Solutions.webp" },
+      { model: "AV-003", name: "PA & Sound Systems", specs: "Professional audio systems", image: "/products/PA & Sound Systems.jpg" },
+      { model: "AV-004", name: "Interactive Displays", specs: "Touch-enabled displays", image: "/products/Interactive Displays.avif" },
+      { model: "AV-005", name: "Video Conferencing Setup", specs: "Remote meeting solutions", image: "/products/Video Conferencing Setup.avif" },
     ],
   },
   {
@@ -345,11 +332,11 @@ export const productCategories: ProductCategory[] = [
     slug: "networking-structured-cabling",
     iconName: "Network",
     products: [
-      { model: "NET-001", name: "LAN/WAN Setup", specs: "Local & wide area networks", image: "/placeholder.svg" },
-      { model: "NET-002", name: "Structured Cabling", specs: "Professional cable installation", image: "/placeholder.svg" },
-      { model: "NET-003", name: "Network Infrastructure Design", specs: "Custom network planning", image: "/placeholder.svg" },
-      { model: "NET-004", name: "Network Troubleshooting", specs: "Network issue resolution", image: "/placeholder.svg" },
-      { model: "NET-005", name: "Wireless Network Setup", specs: "WiFi & wireless solutions", image: "/placeholder.svg" },
+      { model: "NET-001", name: "LAN/WAN Setup", specs: "Local & wide area networks", image: "/products/LAN,WAN Setup.avif" },
+      { model: "NET-002", name: "Structured Cabling", specs: "Professional cable installation", image: "/products/Structured Cabling.avif" },
+      { model: "NET-003", name: "Network Infrastructure Design", specs: "Custom network planning", image: "/products/Network Infrastructure Design.avif" },
+      { model: "NET-004", name: "Network Troubleshooting", specs: "Network issue resolution", image: "/products/Network Troubleshooting.avif" },
+      { model: "NET-005", name: "Wireless Network Setup", specs: "WiFi & wireless solutions", image: "/products/Wireless Network Setup.jpg" },
     ],
   },
   {
@@ -357,11 +344,11 @@ export const productCategories: ProductCategory[] = [
     slug: "annual-maintenance-contracts",
     iconName: "Wrench",
     products: [
-      { model: "AMC-001", name: "CCTV AMC", specs: "Annual maintenance for CCTV systems", image: "/placeholder.svg" },
-      { model: "AMC-002", name: "Access Control AMC", specs: "Biometric system maintenance", image: "/placeholder.svg" },
-      { model: "AMC-003", name: "Automation AMC", specs: "Smart home/office maintenance", image: "/placeholder.svg" },
-      { model: "AMC-004", name: "IT Infrastructure AMC", specs: "Computer & network maintenance", image: "/placeholder.svg" },
-      { model: "AMC-005", name: "Complete System AMC", specs: "All-in-one maintenance package", image: "/placeholder.svg" },
+      { model: "AMC-001", name: "CCTV AMC", specs: "Annual maintenance for CCTV systems", image: "/products/CCTV AMC.jpg" },
+      { model: "AMC-002", name: "Access Control AMC", specs: "Biometric system maintenance", image: "/products/Access Control AMC.webp" },
+      { model: "AMC-003", name: "Automation AMC", specs: "Smart home/office maintenance", image: "/products/Automation AMC.png" },
+      { model: "AMC-004", name: "IT Infrastructure AMC", specs: "Computer & network maintenance", image: "/products/IT Infrastructure AMC.jpg" },
+      { model: "AMC-005", name: "Complete System AMC", specs: "All-in-one maintenance package", image: "/products/Complete System AMC.webp" },
     ],
   },
   {
@@ -410,21 +397,6 @@ export const productCategories: ProductCategory[] = [
       { model: "IHT-PHL02", name: "Smart High Bay", specs: "100W – Round", image: getProductImage("Smart High Bay", "100W – Round") },
       { model: "IHT-PHL03", name: "Smart High Bay", specs: "150W – Round", image: getProductImage("Smart High Bay", "150W – Round") },
       { model: "IHT-PHL04", name: "Smart High Bay", specs: "200W – Round", image: getProductImage("Smart High Bay", "200W – Round") },
-    ],
-  },
-  {
-    title: "Inzaus Motion Sensors",
-    slug: "inzaus-motion-sensors",
-    iconName: "Radio",
-    products: [
-      { model: "S-24", name: "Inzaus Motion Sensor Mini", specs: "PIR – 8m – Surface", image: getProductImage("Inzaus Motion Sensor Mini", "PIR – 8m – Surface") },
-      { model: "S-24A", name: "Inzaus Motion Sensor Tiny", specs: "PIR – 6m – Ceiling", image: getProductImage("Inzaus Motion Sensor Tiny", "PIR – 6m – Ceiling") },
-      { model: "S-27 / 33", name: "Inzaus Occupancy Presence Sensor", specs: "6m – Ceiling", image: getProductImage("Inzaus Occupancy Presence Sensor", "6m – Ceiling") },
-      { model: "S-29", name: "Sensor Switch", specs: "Microwave – 8m – Any", image: getProductImage("Sensor Switch", "Microwave – 8m – Any") },
-      { model: "S-30", name: "Microwave Sensor", specs: "12m – Surface", image: getProductImage("Microwave Sensor", "12m – Surface") },
-      { model: "S-31", name: "Microwave Sensor", specs: "12m – Surface", image: getProductImage("Microwave Sensor", "12m – Surface") },
-      { model: "LDR", name: "LDR Sensor", specs: "Surface", image: getProductImage("LDR Sensor", "Surface") },
-      { model: "SS-25", name: "Inzaus Smoke Sensor", specs: "Ceiling", image: getProductImage("Inzaus Smoke Sensor", "Ceiling") },
     ],
   },
   {
