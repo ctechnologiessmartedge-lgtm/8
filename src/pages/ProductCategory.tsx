@@ -63,11 +63,26 @@ const ProductCategory = () => {
   return (
     <>
       <Helmet>
-        <title>{category.title} | C Technologies Smart Edge</title>
+        <title>{category.title} | C Technologies Smart Edge - Vijayawada</title>
         <meta
           name="description"
-          content={`Browse our ${category.title} products. Quality smart sensor lighting solutions for homes and businesses in Vijayawada.`}
+          content={`Browse our ${category.title} products. Quality smart sensor lighting and security solutions for homes and businesses in Vijayawada, Andhra Pradesh. Expert installation and support available.`}
         />
+        <meta name="keywords" content={`${category.title}, smart security solutions, ${category.title.toLowerCase()} Vijayawada, ${category.title.toLowerCase()} Andhra Pradesh, smart home products, security systems, automation solutions, ChatGPT, AI security, smart living solutions, C Technologies Smart Edge`} />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href={`https://ctechnologies-smartedge.com/products/${category.slug}`} />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content={`https://ctechnologies-smartedge.com/products/${category.slug}`} />
+        <meta property="og:title" content={`${category.title} | C Technologies Smart Edge`} />
+        <meta property="og:description" content={`Browse ${category.title} products. Quality smart security and automation solutions in Vijayawada.`} />
+        <meta property="og:image" content="https://ctechnologies-smartedge.com/logo.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content={`${category.title} | C Technologies Smart Edge`} />
+        <meta name="twitter:description" content={`${category.title} products - Quality smart security solutions in Vijayawada.`} />
       </Helmet>
       <Layout>
         {/* Hero Section */}

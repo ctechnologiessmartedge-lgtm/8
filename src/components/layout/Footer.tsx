@@ -82,14 +82,24 @@ const Footer = () => {
                 { name: "Products", path: "/products" },
                 { name: "Services", path: "/services" },
                 { name: "Contact", path: "/contact" },
+                { name: "Sitemap", path: "/sitemap.xml", external: true },
               ].map((link) => (
                 <li key={link.path}>
-                  <Link
-                    to={link.path}
-                    className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
-                  >
-                    {link.name}
-                  </Link>
+                  {link.external ? (
+                    <a
+                      href={link.path}
+                      className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
+                    >
+                      {link.name}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.path}
+                      className="text-primary-foreground/70 hover:text-accent transition-colors text-sm"
+                    >
+                      {link.name}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>

@@ -31,11 +31,26 @@ const Products = () => {
   return (
     <>
       <Helmet>
-        <title>Products | C Technologies Smart Edge</title>
+        <title>Products | C Technologies Smart Edge - Smart Lighting & Security Solutions</title>
         <meta
           name="description"
-          content="Browse our range of smart motion sensor lights, LED panels, sensors, and energy-efficient lighting solutions. Quality products for homes and businesses in Vijayawada."
+          content="Browse our comprehensive range of smart motion sensor lights, LED panels, sensors, CCTV systems, access control, home automation, and energy-efficient lighting solutions. Quality products for homes and businesses in Vijayawada, Andhra Pradesh."
         />
+        <meta name="keywords" content="smart motion sensor lights, LED panels, CCTV cameras, access control systems, biometric systems, video door phones, home automation, smart lighting, motion sensors, LED lights, security cameras, fingerprint access, face recognition, smart gates, alarm systems, IT hardware, networking solutions, projectors, sound systems, smart home products, energy efficient lighting, sensor lights Vijayawada, smart products Andhra Pradesh, ChatGPT, AI powered security, smart living products" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ctechnologies-smartedge.com/products" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ctechnologies-smartedge.com/products" />
+        <meta property="og:title" content="Products | C Technologies Smart Edge - Smart Lighting & Security Solutions" />
+        <meta property="og:description" content="Browse comprehensive range of smart motion sensor lights, LED panels, CCTV, access control, and home automation products in Vijayawada." />
+        <meta property="og:image" content="https://ctechnologies-smartedge.com/logo.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Products | C Technologies Smart Edge" />
+        <meta name="twitter:description" content="Smart motion sensor lights, LED panels, CCTV, access control, and home automation products in Vijayawada." />
       </Helmet>
       <Layout>
         {/* Hero Section */}

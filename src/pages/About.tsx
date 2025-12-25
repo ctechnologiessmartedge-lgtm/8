@@ -34,11 +34,26 @@ const About = () => {
   return (
     <>
       <Helmet>
-        <title>About Us | C Technologies Smart Edge</title>
+        <title>About Us | C Technologies Smart Edge - Security Solutions Vijayawada</title>
         <meta
           name="description"
-          content="Learn about C Technologies Smart Edge - your trusted partner for security and smart technology solutions in Vijayawada with 10+ years of experience."
+          content="Learn about C Technologies Smart Edge - your trusted partner for security and smart technology solutions in Vijayawada with 10+ years of experience. 500+ successful projects, expert team, 24/7 support."
         />
+        <meta name="keywords" content="C Technologies Smart Edge, about us, security company Vijayawada, smart technology solutions, CCTV installation company, access control experts, home automation specialists, security solutions Andhra Pradesh, 10 years experience, trusted security provider, ChatGPT, AI security company, smart living solutions provider" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ctechnologies-smartedge.com/about" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ctechnologies-smartedge.com/about" />
+        <meta property="og:title" content="About Us | C Technologies Smart Edge - Security Solutions Vijayawada" />
+        <meta property="og:description" content="Trusted security and smart technology solutions provider in Vijayawada with 10+ years experience. 500+ successful projects." />
+        <meta property="og:image" content="https://ctechnologies-smartedge.com/logo.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="About Us | C Technologies Smart Edge" />
+        <meta name="twitter:description" content="Trusted security solutions provider in Vijayawada with 10+ years experience and 500+ successful projects." />
       </Helmet>
       <Layout>
         {/* Hero Section */}

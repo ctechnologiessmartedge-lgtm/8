@@ -68,16 +68,38 @@ const Contact = () => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("https://formspree.io/f/mlgryknz", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
 
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for contacting us. We'll get back to you soon.",
-    });
-
-    setFormData({ name: "", phone: "", email: "", message: "" });
-    setIsSubmitting(false);
+      if (response.ok) {
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for contacting us. We'll get back to you soon.",
+        });
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      } else {
+        throw new Error("Form submission failed");
+      }
+    } catch (error) {
+      toast({
+        title: "Error",
+        description: "Failed to send message. Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const whatsappNumber = "919010700204";
@@ -88,11 +110,26 @@ const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Contact Us | C Technologies Smart Edge</title>
+        <title>Contact Us | C Technologies Smart Edge - Vijayawada</title>
         <meta
           name="description"
-          content="Get in touch with C Technologies Smart Edge for security and smart home solutions in Vijayawada. Call, email, or visit us for a free consultation."
+          content="Get in touch with C Technologies Smart Edge for security and smart home solutions in Vijayawada. Call +91-9010727204, email, WhatsApp, or visit us at Indra Colony, Krishna Lanka for a free consultation."
         />
+        <meta name="keywords" content="contact C Technologies Smart Edge, security company contact Vijayawada, CCTV installation contact, smart home consultation, free security consultation, contact security experts, WhatsApp security consultation, security company phone number, C Technologies Smart Edge address, ChatGPT, AI security consultation, smart living consultation" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ctechnologies-smartedge.com/contact" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ctechnologies-smartedge.com/contact" />
+        <meta property="og:title" content="Contact Us | C Technologies Smart Edge - Vijayawada" />
+        <meta property="og:description" content="Contact C Technologies Smart Edge for security solutions. Call, email, WhatsApp, or visit us in Vijayawada for free consultation." />
+        <meta property="og:image" content="https://ctechnologies-smartedge.com/logo.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Contact Us | C Technologies Smart Edge" />
+        <meta name="twitter:description" content="Contact us for security and smart home solutions in Vijayawada. Free consultation available." />
       </Helmet>
       <Layout>
         {/* Hero Section */}
@@ -144,7 +181,7 @@ const Contact = () => {
                   Fill out the form below and we'll get back to you shortly.
                 </p>
 
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} action="https://formspree.io/f/mlgryknz" method="POST" className="space-y-6">
                   <div>
                     <label
                       htmlFor="name"

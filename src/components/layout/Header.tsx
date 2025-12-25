@@ -91,7 +91,7 @@ const Header = () => {
                 onMouseEnter={() => setIsProductsOpen(true)}
                 onMouseLeave={() => setIsProductsOpen(false)}
               >
-                <div className="bg-card border border-border rounded-xl shadow-lg py-2 w-72 max-h-96 overflow-y-auto">
+                <div className="bg-card border border-border rounded-xl shadow-lg py-2 w-72 max-h-96 overflow-y-auto scrollbar-hide">
                   <Link
                     to="/products"
                     className="block px-4 py-2 text-sm font-semibold text-foreground hover:bg-accent/10 hover:text-accent transition-colors border-b border-border mb-1"
@@ -190,7 +190,7 @@ const Header = () => {
                   <ChevronDown className={`w-4 h-4 transition-transform ${isProductsOpen ? "rotate-180" : ""}`} />
                 </button>
                 <div className={`overflow-hidden transition-all duration-300 ${isProductsOpen ? "max-h-96" : "max-h-0"}`}>
-                  <div className="bg-gray-50 py-2 space-y-1 max-h-60 overflow-y-auto">
+                  <div className="bg-gray-50 py-2 space-y-1 max-h-60 overflow-y-auto scrollbar-hide">
                     <Link
                       to="/products"
                       className="block px-10 py-2 text-sm font-semibold text-gray-800 hover:text-accent hover:bg-white transition-colors"

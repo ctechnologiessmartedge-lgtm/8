@@ -21,11 +21,26 @@ const Gallery = () => {
   return (
     <>
       <Helmet>
-        <title>Gallery | C Technologies Smart Edge</title>
+        <title>Gallery | C Technologies Smart Edge - Product Showcase</title>
         <meta
           name="description"
-          content="Browse our product gallery showcasing smart sensor lighting solutions, LED panels, sensors, and more. Quality products for homes and businesses in Vijayawada."
+          content="Browse our comprehensive product gallery showcasing smart sensor lighting solutions, LED panels, CCTV cameras, access control systems, home automation products, sensors, and more. Quality products for homes and businesses in Vijayawada, Andhra Pradesh."
         />
+        <meta name="keywords" content="product gallery, smart lighting gallery, CCTV camera gallery, access control gallery, home automation gallery, LED panel gallery, sensor gallery, security products gallery, smart home products gallery, product showcase Vijayawada, ChatGPT, AI security products, smart living products showcase" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ctechnologies-smartedge.com/gallery" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ctechnologies-smartedge.com/gallery" />
+        <meta property="og:title" content="Gallery | C Technologies Smart Edge - Product Showcase" />
+        <meta property="og:description" content="Browse our product gallery showcasing smart sensor lighting, CCTV, access control, and home automation products." />
+        <meta property="og:image" content="https://ctechnologies-smartedge.com/logo.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Gallery | C Technologies Smart Edge" />
+        <meta name="twitter:description" content="Product gallery showcasing smart lighting, CCTV, access control, and automation products." />
       </Helmet>
       <Layout>
         {/* Hero Section */}

@@ -126,11 +126,26 @@ const Services = () => {
   return (
     <>
       <Helmet>
-        <title>Our Services | C Technologies Smart Edge</title>
+        <title>Our Services | C Technologies Smart Edge - Complete Security Solutions</title>
         <meta
           name="description"
-          content="Explore our comprehensive security and smart technology services including CCTV, access control, home automation, and more in Vijayawada."
+          content="Explore our comprehensive security and smart technology services including CCTV installation, biometric access control, home automation, video door phones, automatic gates, alarm systems, IT support, and more in Vijayawada, Andhra Pradesh."
         />
+        <meta name="keywords" content="CCTV installation services, access control services, home automation services, video door phone installation, automatic gate installation, alarm system installation, IT support services, network setup services, security services Vijayawada, smart home services, biometric installation, surveillance installation, ChatGPT, AI security services, smart living services, C Technologies Smart Edge services" />
+        <meta name="robots" content="index, follow" />
+        <link rel="canonical" href="https://ctechnologies-smartedge.com/services" />
+        
+        {/* Open Graph */}
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://ctechnologies-smartedge.com/services" />
+        <meta property="og:title" content="Our Services | C Technologies Smart Edge - Complete Security Solutions" />
+        <meta property="og:description" content="Comprehensive security and smart technology services: CCTV, access control, home automation, and more in Vijayawada." />
+        <meta property="og:image" content="https://ctechnologies-smartedge.com/logo.png" />
+        
+        {/* Twitter */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Our Services | C Technologies Smart Edge" />
+        <meta name="twitter:description" content="CCTV, access control, home automation, and smart security services in Vijayawada." />
       </Helmet>
       <Layout>
         {/* Hero Section */}
