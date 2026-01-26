@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -31,6 +32,43 @@ const values = [
 ];
 
 const About = () => {
+  useEffect(() => {
+    // Add structured data for SEO
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "AboutPage",
+      "mainEntity": {
+        "@type": "LocalBusiness",
+        "name": "C Technologies Smart Edge",
+        "description": "Trusted security and smart technology solutions provider in Vijayawada with 10+ years experience. 500+ successful projects.",
+        "url": "https://ctechnologies-smartedge.com",
+        "logo": "https://ctechnologies-smartedge.com/logo.png",
+        "image": "https://ctechnologies-smartedge.com/logo.png",
+        "foundingDate": "2014",
+        "numberOfEmployees": "50+",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Indra Colony, Krishna Lanka",
+          "addressLocality": "Vijayawada",
+          "addressRegion": "Andhra Pradesh",
+          "postalCode": "520013",
+          "addressCountry": "IN"
+        },
+        "telephone": "+91-9010727204",
+        "email": "ctechnologies.smartedge@gmail.com"
+      }
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -49,11 +87,13 @@ const About = () => {
         <meta property="og:title" content="About Us | C Technologies Smart Edge - Security Solutions Vijayawada" />
         <meta property="og:description" content="Trusted security and smart technology solutions provider in Vijayawada with 10+ years experience. 500+ successful projects." />
         <meta property="og:image" content="https://ctechnologies-smartedge.com/logo.png" />
+        <meta property="og:locale" content="en_IN" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="About Us | C Technologies Smart Edge" />
         <meta name="twitter:description" content="Trusted security solutions provider in Vijayawada with 10+ years experience and 500+ successful projects." />
+        <meta name="twitter:image" content="https://ctechnologies-smartedge.com/logo.png" />
       </Helmet>
       <Layout>
         {/* Hero Section */}

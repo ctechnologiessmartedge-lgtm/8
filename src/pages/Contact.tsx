@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Helmet } from "react-helmet-async";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
@@ -57,6 +57,59 @@ const Contact = () => {
     email: "",
     message: "",
   });
+
+  useEffect(() => {
+    // Add structured data for SEO
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "mainEntity": {
+        "@type": "LocalBusiness",
+        "name": "C Technologies Smart Edge",
+        "url": "https://ctechnologies-smartedge.com",
+        "logo": "https://ctechnologies-smartedge.com/logo.png",
+        "image": "https://ctechnologies-smartedge.com/logo.png",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Indra Colony, Krishna Lanka",
+          "addressLocality": "Vijayawada",
+          "addressRegion": "Andhra Pradesh",
+          "postalCode": "520013",
+          "addressCountry": "IN"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "16.5062",
+          "longitude": "80.6480"
+        },
+        "telephone": ["+91-9010727204", "+91-9010700204"],
+        "email": "ctechnologies.smartedge@gmail.com",
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+            "opens": "09:00",
+            "closes": "22:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Sunday",
+            "opens": "10:00",
+            "closes": "14:00"
+          }
+        ]
+      }
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -130,6 +183,7 @@ const Contact = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Contact Us | C Technologies Smart Edge" />
         <meta name="twitter:description" content="Contact us for security and smart home solutions in Vijayawada. Free consultation available." />
+        <meta name="twitter:image" content="https://ctechnologies-smartedge.com/logo.png" />
       </Helmet>
       <Layout>
         {/* Hero Section */}

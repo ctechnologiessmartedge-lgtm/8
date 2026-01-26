@@ -83,6 +83,7 @@ const ProductCategory = () => {
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content={`${category.title} | C Technologies Smart Edge`} />
         <meta name="twitter:description" content={`${category.title} products - Quality smart security solutions in Vijayawada.`} />
+        <meta name="twitter:image" content="https://ctechnologies-smartedge.com/logo.png" />
       </Helmet>
       <Layout>
         {/* Hero Section */}

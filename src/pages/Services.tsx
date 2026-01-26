@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 import Layout from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
@@ -123,6 +124,47 @@ const services = [
 ];
 
 const Services = () => {
+  useEffect(() => {
+    // Add structured data for SEO
+    const script = document.createElement('script');
+    script.type = 'application/ld+json';
+    script.text = JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "serviceType": "Security and Smart Technology Solutions",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "C Technologies Smart Edge",
+        "url": "https://ctechnologies-smartedge.com",
+        "logo": "https://ctechnologies-smartedge.com/logo.png"
+      },
+      "areaServed": {
+        "@type": "City",
+        "name": ["Vijayawada", "Guntur", "Tenali", "Mangalagiri", "Amaravati"]
+      },
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Security and Smart Technology Services",
+        "itemListElement": services.map((service, index) => ({
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": service.title,
+            "description": service.description
+          },
+          "position": index + 1
+        }))
+      }
+    });
+    document.head.appendChild(script);
+
+    return () => {
+      if (document.head.contains(script)) {
+        document.head.removeChild(script);
+      }
+    };
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -141,11 +183,13 @@ const Services = () => {
         <meta property="og:title" content="Our Services | C Technologies Smart Edge - Complete Security Solutions" />
         <meta property="og:description" content="Comprehensive security and smart technology services: CCTV, access control, home automation, and more in Vijayawada." />
         <meta property="og:image" content="https://ctechnologies-smartedge.com/logo.png" />
+        <meta property="og:locale" content="en_IN" />
         
         {/* Twitter */}
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" content="Our Services | C Technologies Smart Edge" />
         <meta name="twitter:description" content="CCTV, access control, home automation, and smart security services in Vijayawada." />
+        <meta name="twitter:image" content="https://ctechnologies-smartedge.com/logo.png" />
       </Helmet>
       <Layout>
         {/* Hero Section */}
