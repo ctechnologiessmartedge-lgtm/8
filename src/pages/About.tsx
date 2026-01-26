@@ -101,7 +101,7 @@ const About = () => {
           <div 
             className="absolute inset-0 z-0 bg-contain md:bg-cover"
             style={{
-              backgroundImage: 'url(/hero-bg.png)',
+              backgroundImage: 'url(/hero-bg-new.png)',
               backgroundPosition: 'top center',
               backgroundRepeat: 'no-repeat',
               opacity: 0.6

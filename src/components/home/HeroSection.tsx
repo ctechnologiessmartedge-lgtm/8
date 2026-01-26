@@ -47,7 +47,12 @@ const HeroSection = () => {
 
             <h1 className="text-2xl md:text-4xl lg:text-5xl font-bold text-primary-foreground leading-tight mb-4 md:mb-6 animate-fade-in" style={{ animationDelay: "0.1s" }}>
               Secure Your World with{" "}
-              <span className="text-blue-500">C Technologies Smart Edge</span>
+              <span className="relative inline-block">
+                <span className="relative z-10 text-blue-500 font-extrabold bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent drop-shadow-lg">
+                  C Technologies Smart Edge
+                </span>
+                <span className="absolute inset-0 bg-blue-500/20 blur-xl rounded-lg -z-0 animate-pulse"></span>
+              </span>
             </h1>
 
             <p className="text-base md:text-lg lg:text-xl text-primary-foreground/70 mb-6 md:mb-8 max-w-xl mx-auto lg:mx-0 animate-fade-in" style={{ animationDelay: "0.2s" }}>
